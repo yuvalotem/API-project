@@ -45,7 +45,7 @@ class APIManager {
                 this.createUsers(respone)
             },
             error: function (xhr, text, error) {
-                console.log(text);
+                alert(text);
             }
         })
     }
@@ -58,7 +58,7 @@ class APIManager {
                 this.data.quote = response
             },
             error: function (xhr, text, error) {
-                console.log(text);
+                alert(text);
             }
         })
     }
@@ -73,7 +73,7 @@ class APIManager {
                 this.data.pokemon = { name: response.name, img: response.sprites.front_default }
             },
             error: function (xhr, text, error) {
-                console.log(text);
+                alert(text);
             }
         })
     }
@@ -86,7 +86,7 @@ class APIManager {
                 this.data.aboutMe = response
             },
             error: function (xhr, text, error) {
-                console.log(text);
+                alert(text);
             }
         })
     }

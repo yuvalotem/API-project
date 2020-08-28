@@ -64,3 +64,10 @@ class Renderer {
         $('.saved-container').append(newHTML)
     }
 }
+
+
+  
+    Handlebars.registerHelper('properCase', function(text)
+    {
+      return text[0].toUpperCase() + text.substring(1)
+    });
