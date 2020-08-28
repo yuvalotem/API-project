@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <title>API Project</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="user-container"></div>
+        <div class="quote-container"></div>
+        <div class="content-container">
+            <div class="pokemon-container"></div>
+            <div class="meat-container"></div>
+        </div>
+        <div class="friends">
+            <h4>Friends</h4>
+            <div class="friends-container">
+            </div>
+        </div>
+        <div class="save">
+            <h4>Saved users</h4>
+            <div class="saved-container">
+            </div>
+        </div>
+        <div class="buttons">
+            <button id="load">Load User Data</button>
+            <button id="display">Display User</button>
+            <button id="save">Save User Page</button>
+            <button id="load-saved">Load User Page</button>
+        </div>
+    </div>
+
+    <script id="user-template" type="text/x-handlebars-template">
+        <img src="{{user.imgUrl}}" id="profile-pic">
+        <p class="user-info">{{user.first}} {{user.last}}</p>
+        <p class="user-info">{{user.city}}, {{user.state}}</p>
+    </script>
+    <script id="quote-template" type="text/x-handlebars-template">
+        <p>Favorite quote: </p>
+        <span>"{{this}}"</span>
+    </script>
+    <script id="pokemon-template" type="text/x-handlebars-template">
+        <img src="{{pokemon.img}}" id="pokemon-image">
+        <p id="pokemon-text">Favorite pokemon: {{properCase pokemon.name}}</p>
+    </script>
+    <script id="meat-template" type="text/x-handlebars-template">
+        <p>About me:</p>
+        <p class="meat-text">{{aboutMe}}</p>
+    </script>
+    <script id="friends-template" type="text/x-handlebars-template">
+        <br/>
+        {{#each friend}}
+        <div>{{this.first}} {{this.last}}</div><br/>
+        {{/each}}
+    </script>
+    <script id="saved-template" type="text/x-handlebars-template">
+        <select name="saved" id="saved-users">
+        {{#each this}}
+        <option value="{{this}}">{{this}}</option>
+        {{/each}}
+        </select>
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+    <script src="APIManager.js"></script>
+    <script src="view.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
